@@ -1,15 +1,10 @@
-const ageGate = document.querySelector('#ageGate');
-const enterSite = document.querySelector('#enterSite');
-const year = document.querySelector('#year');
-
-if (sessionStorage.getItem('archive-access') === 'granted') {
-  ageGate.remove();
-}
-
-enterSite.addEventListener('click', () => {
-  sessionStorage.setItem('archive-access', 'granted');
-  ageGate.classList.add('is-hidden');
-  setTimeout(() => ageGate.remove(), 250);
-});
-
-year.textContent = new Date().getFullYear();
+const ageGate=document.querySelector('#ageGate');const enterSite=document.querySelector('#enterSite');const year=document.querySelector('#year');const stage=document.querySelector('#modelStage');const pack=document.querySelector('#pack3d');const resetButton=document.querySelector('#resetModel');const spinButton=document.querySelector('#spinModel');let rotationX=-8;let rotationY=-28;let dragging=false;let startX=0;let startY=0;let startRotationX=0;let startRotationY=0;let autoSpin=false;
+if(sessionStorage.getItem('archive-access')==='granted')ageGate.remove();
+enterSite.addEventListener('click',()=>{sessionStorage.setItem('archive-access','granted');ageGate.classList.add('is-hidden');setTimeout(()=>ageGate.remove(),250)});
+year.textContent=new Date().getFullYear();
+const renderModel=()=>{pack.style.transform=`rotateX(${rotationX}deg) rotateY(${rotationY}deg)`};
+stage.addEventListener('pointerdown',event=>{dragging=true;stage.setPointerCapture(event.pointerId);startX=event.clientX;startY=event.clientY;startRotationX=rotationX;startRotationY=rotationY;stage.classList.add('is-dragging')});
+stage.addEventListener('pointermove',event=>{if(!dragging)return;rotationY=startRotationY+(event.clientX-startX)*.55;rotationX=Math.max(-75,Math.min(75,startRotationX-(event.clientY-startY)*.45));renderModel()});
+const stopDragging=()=>{dragging=false;stage.classList.remove('is-dragging')};stage.addEventListener('pointerup',stopDragging);stage.addEventListener('pointercancel',stopDragging);stage.addEventListener('keydown',event=>{if(event.key==='ArrowLeft')rotationY-=10;if(event.key==='ArrowRight')rotationY+=10;if(event.key==='ArrowUp')rotationX=Math.max(-75,rotationX-10);if(event.key==='ArrowDown')rotationX=Math.min(75,rotationX+10);renderModel()});
+resetButton.addEventListener('click',()=>{rotationX=-8;rotationY=-28;autoSpin=false;spinButton.setAttribute('aria-pressed','false');spinButton.textContent='Auto-spin';renderModel()});spinButton.addEventListener('click',()=>{autoSpin=!autoSpin;spinButton.setAttribute('aria-pressed',String(autoSpin));spinButton.textContent=autoSpin?'Stop spinning':'Auto-spin'});const animate=()=>{if(autoSpin&&!dragging){rotationY+=.35;renderModel()}requestAnimationFrame(animate)};animate();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.14});document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));

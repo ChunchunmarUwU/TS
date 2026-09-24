@@ -22,77 +22,40 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Marlboro visual history home">M<span>/</span>B</a>
-    <nav aria-label="Main navigation">
-      <a href="#story">Story</a>
-      <a href="#identity">Identity</a>
-      <a href="#legacy">Legacy</a>
-    </nav>
+    <nav aria-label="Main navigation"><a href="#story">Story</a><a href="#model">3D Model</a><a href="#identity">Identity</a><a href="#legacy">Legacy</a></nav>
     <span class="header-note">EST. 1924 / ARCHIVE 01</span>
   </header>
 
   <main id="top">
     <section class="hero section-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">An editorial visual history</p>
-        <h1>The shape<br />of <em>bold.</em></h1>
-        <p class="hero-intro">From a quiet women’s cigarette to one of the world’s most recognizable identities, Marlboro’s story is written in red, white, and a resolute point of view.</p>
-        <a class="text-link" href="#story">Explore the archive <span>↓</span></a>
-      </div>
-      <div class="hero-art" aria-label="Abstract red and white geometric artwork">
-        <div class="sun"></div>
-        <div class="mountain mountain-back"></div>
-        <div class="mountain mountain-front"></div>
-        <div class="pack-shape"><span>Marlboro</span><small>FILTER CIGARETTES</small></div>
-        <span class="art-label">01 / 04</span>
-      </div>
+      <div class="hero-copy reveal"><p class="eyebrow">An editorial visual history</p><h1>The shape<br />of <em>bold.</em></h1><p class="hero-intro">From a quiet women’s cigarette to one of the world’s most recognizable identities, Marlboro’s story is written in red, white, and a resolute point of view.</p><a class="text-link" href="#story">Explore the archive <span>↓</span></a></div>
+      <div class="hero-art" aria-label="Abstract red and white geometric artwork"><div class="sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div><div class="pack-shape"><span>Marlboro</span><small>FILTER CIGARETTES</small></div><span class="art-label">01 / 04</span></div>
     </section>
 
-    <section class="marquee" aria-label="Editorial statement"><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span></section>
+    <section class="marquee" aria-label="Editorial statement"><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span><span>ICONIC BY DESIGN</span></section>
 
-    <section class="story section-grid" id="story">
-      <div class="section-label"><span>01</span><span>THE STORY</span></div>
-      <div class="story-content">
-        <p class="eyebrow">A century of reinvention</p>
-        <h2>One name.<br /><em>Many eras.</em></h2>
-        <div class="story-columns">
-          <p>Marlboro began in the 1920s as a cigarette marketed toward women. Its identity changed dramatically in the 1950s, when the brand adopted the red-and-white pack and a more rugged advertising direction.</p>
-          <p>The resulting visual language was direct and memorable: a sharp chevron, high contrast, and imagery built around independence. This page looks at that language as a piece of design history.</p>
+    <section class="model-section section-grid" id="model">
+      <div class="section-label"><span>00</span><span>INTERACTIVE OBJECT</span></div>
+      <div class="model-content reveal">
+        <div><p class="eyebrow">Rotate the archive</p><h2>A pack,<br /><em>in space.</em></h2><p class="model-description">Drag the object to inspect this stylized, non-functional 3D study of the classic red-and-white pack. Use the controls to reset or let it turn.</p></div>
+        <div class="model-stage" id="modelStage" aria-label="Interactive 3D stylized pack model" tabindex="0">
+          <div class="model-shadow"></div>
+          <div class="pack-3d" id="pack3d">
+            <div class="pack-face pack-front"><span class="pack-chevron"></span><strong>Marlboro</strong><small>FILTER CIGARETTES</small><i>20 CLASS A CIGARETTES</i></div>
+            <div class="pack-face pack-back"><span>ARCHIVE<br />STUDY</span></div>
+            <div class="pack-face pack-top"><span>M</span></div><div class="pack-face pack-bottom"></div><div class="pack-face pack-left"></div><div class="pack-face pack-right"></div>
+          </div>
+          <span class="model-hint">DRAG TO ROTATE</span>
         </div>
-        <div class="timeline">
-          <div><strong>1924</strong><span>The brand launches in the United States.</span></div>
-          <div><strong>1954</strong><span>A new visual identity begins to take shape.</span></div>
-          <div><strong>1960s</strong><span>The cowboy becomes a defining cultural symbol.</span></div>
-        </div>
+        <div class="model-controls"><button class="button button-outline" id="resetModel">Reset view</button><button class="button button-dark" id="spinModel" aria-pressed="false">Auto-spin</button></div>
       </div>
     </section>
 
-    <section class="identity section-grid" id="identity">
-      <div class="section-label"><span>02</span><span>THE IDENTITY</span></div>
-      <div class="identity-content">
-        <div class="identity-heading"><p class="eyebrow">The anatomy of recognition</p><h2>Less noise.<br /><em>More signal.</em></h2></div>
-        <div class="identity-cards">
-          <article class="identity-card red"><span class="card-number">01</span><h3>The chevron</h3><p>A simple geometric device that creates hierarchy, motion, and instant shelf recognition.</p></article>
-          <article class="identity-card cream"><span class="card-number">02</span><h3>Red / white</h3><p>A deliberately limited palette that makes every element feel considered and unmistakable.</p></article>
-          <article class="identity-card dark"><span class="card-number">03</span><h3>The horizon</h3><p>Open landscapes turned a product story into a larger idea about space and self-direction.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="quote-section">
-      <div class="quote-mark">“</div>
-      <blockquote>Good design doesn’t ask to be remembered.<br /><em>It makes forgetting impossible.</em></blockquote>
-      <span class="quote-caption">— A study in visual consistency</span>
-    </section>
-
-    <section class="legacy section-grid" id="legacy">
-      <div class="section-label"><span>03</span><span>THE LEGACY</span></div>
-      <div class="legacy-content">
-        <div><p class="eyebrow">A cultural footprint</p><h2>Built to<br /><em>stand apart.</em></h2></div>
-        <div class="legacy-copy"><p>Few consumer brands have maintained such a consistent visual grammar across generations. Marlboro’s packaging, typography, photography, and campaign language became a case study in how repetition can build recognition.</p><p>Its history is also inseparable from the questions raised by advertising, public health, and the responsibilities of visual persuasion. Understanding the design means understanding both its power and its context.</p></div>
-      </div>
-    </section>
+    <section class="story section-grid" id="story"><div class="section-label"><span>01</span><span>THE STORY</span></div><div class="story-content reveal"><p class="eyebrow">A century of reinvention</p><h2>One name.<br /><em>Many eras.</em></h2><div class="story-columns"><p>Marlboro began in the 1920s as a cigarette marketed toward women. Its identity changed dramatically in the 1950s, when the brand adopted the red-and-white pack and a more rugged advertising direction.</p><p>The resulting visual language was direct and memorable: a sharp chevron, high contrast, and imagery built around independence. This page looks at that language as a piece of design history.</p></div><div class="timeline"><div><strong>1924</strong><span>The brand launches in the United States.</span></div><div><strong>1954</strong><span>A new visual identity begins to take shape.</span></div><div><strong>1960s</strong><span>The cowboy becomes a defining cultural symbol.</span></div></div></div></section>
+    <section class="identity section-grid" id="identity"><div class="section-label"><span>02</span><span>THE IDENTITY</span></div><div class="identity-content reveal"><div class="identity-heading"><p class="eyebrow">The anatomy of recognition</p><h2>Less noise.<br /><em>More signal.</em></h2></div><div class="identity-cards"><article class="identity-card red"><span class="card-number">01</span><h3>The chevron</h3><p>A simple geometric device that creates hierarchy, motion, and instant shelf recognition.</p></article><article class="identity-card cream"><span class="card-number">02</span><h3>Red / white</h3><p>A deliberately limited palette that makes every element feel considered and unmistakable.</p></article><article class="identity-card dark"><span class="card-number">03</span><h3>The horizon</h3><p>Open landscapes turned a product story into a larger idea about space and self-direction.</p></article></div></div></section>
+    <section class="quote-section"><div class="quote-mark">“</div><blockquote>Good design doesn’t ask to be remembered.<br /><em>It makes forgetting impossible.</em></blockquote><span class="quote-caption">— A study in visual consistency</span></section>
+    <section class="legacy section-grid" id="legacy"><div class="section-label"><span>03</span><span>THE LEGACY</span></div><div class="legacy-content reveal"><div><p class="eyebrow">A cultural footprint</p><h2>Built to<br /><em>stand apart.</em></h2></div><div class="legacy-copy"><p>Few consumer brands have maintained such a consistent visual grammar across generations. Marlboro’s packaging, typography, photography, and campaign language became a case study in how repetition can build recognition.</p><p>Its history is also inseparable from the questions raised by advertising, public health, and the responsibilities of visual persuasion. Understanding the design means understanding both its power and its context.</p></div></div></section>
   </main>
-
   <footer class="site-footer"><div class="brand">M<span>/</span>B</div><p>Independent editorial project · For informational purposes only</p><p>© <span id="year"></span> Archive 01</p></footer>
   <script src="script.js"></script>
 </body>
